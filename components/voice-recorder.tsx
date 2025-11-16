@@ -6,18 +6,15 @@ import { Card } from '@/components/ui/card'
 import { Mic, Square, Loader2 } from 'lucide-react'
 
 interface VoiceRecorderProps {
-  isRecording: boolean
   isAnalyzing: boolean
-  onRecordingChange: (recording: boolean) => void
   onRecordingComplete: (audioBlob: Blob) => void
 }
 
 export function VoiceRecorder({
-  isRecording,
   isAnalyzing,
-  onRecordingChange,
   onRecordingComplete
 }: VoiceRecorderProps) {
+  const [isRecording, setIsRecording] = useState(false)
   const [timeLeft, setTimeLeft] = useState(10)
   const [audioLevel, setAudioLevel] = useState(0)
   const mediaRecorderRef = useRef<MediaRecorder | null>(null)
@@ -81,7 +78,7 @@ export function VoiceRecorder({
       }
 
       mediaRecorder.start()
-      onRecordingChange(true)
+      setIsRecording(true)
     } catch (error) {
       console.error('Error accessing microphone:', error)
       alert('Could not access microphone. Please grant permission.')
@@ -109,7 +106,7 @@ export function VoiceRecorder({
   const stopRecording = () => {
     if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
       mediaRecorderRef.current.stop()
-      onRecordingChange(false)
+      setIsRecording(false)
     }
   }
 
@@ -124,7 +121,7 @@ export function VoiceRecorder({
           <div className="text-center space-y-2">
             <h3 className="text-2xl font-semibold text-foreground">Analyzing Your Voice</h3>
             <p className="text-muted-foreground">
-              {'Processing emotional intensity and cognitive markers...'}
+              Processing emotional intensity and cognitive markers...
             </p>
           </div>
           {/* Animated wave */}
@@ -192,7 +189,7 @@ export function VoiceRecorder({
               <div className="text-5xl font-bold text-destructive tabular-nums">
                 {timeLeft}s
               </div>
-              <p className="text-muted-foreground">{'Recording... Click to stop early'}</p>
+              <p className="text-muted-foreground">Recording... Click to stop early</p>
             </>
           ) : (
             <>
@@ -200,7 +197,7 @@ export function VoiceRecorder({
                 Ready to Begin
               </h2>
               <p className="text-muted-foreground max-w-md">
-                {'Click the microphone to record 10 seconds of your voice. Speak naturally about how you\'re feeling.'}
+                Click the microphone to record 10 seconds of your voice. Speak naturally about how you're feeling.
               </p>
             </>
           )}
