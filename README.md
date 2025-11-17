@@ -1,113 +1,86 @@
-🧠 Socrates — Adaptive Emotional Workflow Engine
+# 🧠 Socrates — Adaptive Emotional Workflow Engine
 
-Socrates is an AI-powered emotional workflow system that transforms a user’s emotional state into a targeted, science-backed micro-ritual.
-In just one minute, users speak or type how they feel — and Socrates analyzes their tone, detects stress patterns, and responds with personalized calming sequences like box breathing, grounding prompts, or focus-reset cycles.
+Socrates is an AI-powered emotional workflow system that transforms a user’s emotional state into a targeted, science-backed **micro-ritual**. In just one minute, users speak or type how they feel — and Socrates analyzes their tone, detects stress patterns, and responds with personalized calming sequences like **box breathing**, **grounding prompts**, or **focus-reset cycles**.
 
-Built in 8 hours for a hackathon, Socrates demonstrates how emotion-aware automation can improve daily wellbeing and help users re-enter clarity and focus faster.
+Built in 8 hours for a hackathon, Socrates demonstrates how **emotion-aware automation** can improve daily wellbeing and help users return to clarity and focus faster.
 
-🚀 Features
-🎙️ Real-Time Emotion Analysis
+---
 
-Uses open-source HuggingFace models for sentiment & emotion classification
+## 🚀 Features
 
-Lightweight inference pipeline (no OpenAI API required)
+### 🎙️ Real-Time Emotion Analysis
+- Uses open-source HuggingFace models for sentiment & emotion classification  
+- No OpenAI/closed APIs required  
+- Fast, lightweight inference  
 
-Optimized for fast hackathon-level deployment
+### 🧩 Adaptive Ritual Generator
+- Converts emotional states into dynamic micro-rituals  
+- Supports states such as stress, overwhelm, anxiety, low energy, and distraction  
+- Rituals include:  
+  - Box breathing animation  
+  - Grounding prompts  
+  - “Next best action” focus nudges  
+  - Cognitive reset micro-tasks  
 
-🧩 Adaptive Ritual Generator
+### 🌐 Public REST API
+Socrates provides an API you can integrate with your own apps or automation tools.
 
-Converts emotional states into dynamic micro-rituals
+#### `POST /api/analyze`
+Send text → Receive emotional metadata  
+**Returns:** `{ sentiment, emotion, intensity, recommendedRitual }`
 
-Supports stress, overwhelm, anxiety, low energy, and distraction
+#### `POST /api/ritual`
+Send emotion → Receive structured ritual workflow
 
-Ritual types include:
+### 🖥️ Modern Frontend
+- Next.js  
+- React  
+- Tailwind CSS  
+- shadcn/ui  
+- Framer Motion animations  
 
-Box breathing animation
+---
 
-Grounding prompts
+## 🏗️ Tech Stack
 
-“Next best action’’ productivity nudges
+### Frontend
+- Next.js 14  
+- React 19  
+- TailwindCSS  
+- shadcn/ui  
+- Framer Motion  
 
-Cognitive reset micro-tasks
+### AI
+- HuggingFace Transformers (emotion classifier)  
+- Optional Librosa audio preprocessing  
 
-🌐 Public REST API
+### Backend / API
+- Next.js API routes  
+- Node + Transformers inference  
+- Ritual selection engine  
 
-Socrates includes a lightweight API for programmatic access:
+---
 
-POST /api/analyze
+## 🔥 How It Works
 
-Send text → Receive emotional metadata
-Returns: { sentiment, intensity, recommendedRitual }
+1. User enters text describing how they feel  
+2. AI performs:  
+   - Sentiment analysis  
+   - Emotion classification  
+   - Stress-level scoring  
+3. Ritual engine maps emotion → recommended micro-ritual  
+4. UI displays:  
+   - Breathing guide  
+   - Grounding prompt  
+   - Small “reset” tasks  
 
-POST /api/ritual
+This creates a new category: **emotional micro-workflow automation**.
 
-Send emotion → Receive a structured ritual workflow
+---
 
-This enables:
+## 🧪 Local Development
 
-third-party integrations
+```bash
+npm install
+npm run dev
 
-automation
-
-other teams building emotion-aware workflows
-
-🖥️ Modern Frontend
-
-Next.js 14
-
-shadcn/ui + Tailwind CSS
-
-Framer Motion for breathing animation
-
-Minimalist, calming UI theme
-
-🏗️ Tech Stack
-Frontend
-
-Next.js
-
-React
-
-TailwindCSS
-
-shadcn/ui
-
-Framer Motion
-
-AI Pipeline
-
-HuggingFace Transformers (DistilBERT emotion model)
-
-Librosa (audio preprocessing optional)
-
-Backend / API
-
-Next.js API routes
-
-Lightweight Node inference
-
-JSON structured ritual schema
-
-🔥 How It Works
-
-User submits text describing how they feel
-
-Backend model performs:
-
-Sentiment analysis
-
-Emotion classification
-
-Stress-level estimation
-
-Ritual engine maps emotion → recommended micro-ritual
-
-UI displays:
-
-breathing animation
-
-grounding prompt
-
-cognitive clarity steps
-
-This is a new category: emotional micro-workflow automation.
