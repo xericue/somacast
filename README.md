@@ -1,4 +1,4 @@
-# 🧠 Socrates — Adaptive Emotional Workflow Engine
+# 🧠 Somacast — Adaptive Emotional Workflow Engine
 
 Socrates is an AI-powered emotional workflow system that transforms a user’s emotional state into a targeted, science-backed **micro-ritual**. In just one minute, users speak or type how they feel — and Socrates analyzes their tone, detects stress patterns, and responds with personalized calming sequences like **box breathing**, **grounding prompts**, or **focus-reset cycles**.
 
@@ -23,7 +23,7 @@ Built in 8 hours for a hackathon, Socrates demonstrates how **emotion-aware auto
   - Cognitive reset micro-tasks  
 
 ### 🌐 Public REST API
-Socrates provides an API you can integrate with your own apps or automation tools.
+Somacast provides an API you can integrate with your own apps or automation tools.
 
 #### `POST /api/analyze`
 Send text → Receive emotional metadata  
@@ -63,7 +63,7 @@ Send emotion → Receive structured ritual workflow
 
 ## 🔥 How It Works
 
-1. User enters text describing how they feel  
+1. User speaks describing how they feel
 2. AI performs:  
    - Sentiment analysis  
    - Emotion classification  
